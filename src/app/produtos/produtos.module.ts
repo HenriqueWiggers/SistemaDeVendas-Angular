@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProdutosComponent } from './produtos/produtos.component';
+import { ProdutosComponent } from './components/produtos.component';
 
 
 
@@ -10,6 +10,9 @@ import { ProdutosComponent } from './produtos/produtos.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ProdutosComponent
   ]
 })
 export class ProdutosModule { }

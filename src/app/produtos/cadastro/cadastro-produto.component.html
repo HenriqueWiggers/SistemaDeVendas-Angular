@@ -1,16 +1,26 @@
 <form class="container-fluid">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <div class="row">
+    <div class="col-md-3">
+      <label for="cod_barras" class="form-label">EAN</label>
+      <input type="text" class="form-control" id="cod_barras" aria-describedby="EanHelp">
+      <div id="EanHelp" class="form-text">Digite o codigo de barras do produto</div>
+    </div>
+    <div class="col-md-5">
+      <label for="nom_produto" class="form-label">Descrição</label>
+      <input type="text" class="form-control" id="nom_produto">
+      <div id="nomeHelp" class="form-text">Digite o nome do produto</div>
+    </div>
+     <div class="col-md-2">
+      <label for="vlr_unitario" class="form-label">Preço venda</label>
+      <input type="text" class="form-control" id="vlr_unitario">
+      <div id="preçoHelp" class="form-text">Digite o preço do produto</div>
+    </div>
+    <div class="col-md-2">
+      <label for="qtd_estoque" class="form-label">Estoque</label>
+      <input type="number" class="form-control" id="qtd_estoque">
+      <div id="estoqueHelp" class="form-text">Digite a quantidade em estoque</div>
+    </div>
+   
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button style="margin-top: 40px;" type="submit" class="btn btn-primary">Submit</button>
 </form>

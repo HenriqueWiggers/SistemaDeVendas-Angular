@@ -1,26 +1,27 @@
-<form class="container-fluid">
+<h2 style="margin-left: 40px;margin-bottom: 50px;">Cadastro de Produtos</h2>
+<form class="container-fluid" #formProduto = "ngForm">
   <div class="row">
     <div class="col-md-3">
       <label for="cod_barras" class="form-label">EAN</label>
-      <input type="text" class="form-control" id="cod_barras" aria-describedby="EanHelp">
+      <input type="text" class="form-control" id="cod_barras" name = "cod_barras" [(ngModel)] = "produto.cod_barras" aria-describedby="EanHelp">
       <div id="EanHelp" class="form-text">Digite o codigo de barras do produto</div>
     </div>
     <div class="col-md-5">
       <label for="nom_produto" class="form-label">Descrição</label>
-      <input type="text" class="form-control" id="nom_produto">
+      <input type="text" class="form-control" id="nom_produto" name = "nom_produto" [(ngModel)] = "produto.nom_produto">
       <div id="nomeHelp" class="form-text">Digite o nome do produto</div>
     </div>
      <div class="col-md-2">
       <label for="vlr_unitario" class="form-label">Preço venda</label>
-      <input type="text" class="form-control" id="vlr_unitario">
+      <input type="text" class="form-control" id="vlr_unitario" name = "vlr_unitario" [(ngModel)] = "produto.vlr_unitario">
       <div id="preçoHelp" class="form-text">Digite o preço do produto</div>
     </div>
     <div class="col-md-2">
       <label for="qtd_estoque" class="form-label">Estoque</label>
-      <input type="number" class="form-control" id="qtd_estoque">
+      <input type="number" class="form-control" id="qtd_estoque" name = "qtd_estoque" [(ngModel)] = "produto.qtd_estoque">
       <div id="estoqueHelp" class="form-text">Digite a quantidade em estoque</div>
     </div>
    
   </div>
-  <button style="margin-top: 40px;" type="submit" class="btn btn-primary">Submit</button>
+  <button style="margin-top: 40px;" type="submit" class="btn btn-primary" (click) = "cadastrar()">Submit</button>
 </form>

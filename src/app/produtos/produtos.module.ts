@@ -4,7 +4,7 @@ import { CadastroProdutoComponent } from './cadastro';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProdutoServiceService } from './shared/produto-service.service';
-import { ListarProdutosComponent } from './listar-produtos/listar-produtos.component';
+import { ListarProdutosComponent } from './listar';
 
 
 

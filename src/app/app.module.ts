@@ -5,6 +5,7 @@ import { ProdutosModule } from './produtos';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { ClientesModule } from './clientes';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     ProdutosModule,
+    ClientesModule,
     RouterModule,
     AppRoutingModule
   ],

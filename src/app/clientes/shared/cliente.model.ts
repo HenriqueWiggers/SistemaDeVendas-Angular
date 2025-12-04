@@ -1,4 +1,4 @@
-export class Produto{
+export class Cliente{
 
     constructor(
         public nom_cliente?:string,

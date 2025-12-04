@@ -25,9 +25,22 @@
             <li><a class="dropdown-item" [routerLink]="'/produtos'">Consulta de produtos</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="bi bi-person-fill me-2"></i>Clientes
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="'/clientes/cadastro'">Cadastrar cliente</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/clientes'">Consulta de clientes</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 <div style="width: 100%;height: 60px;"></div>
-<router-outlet></router-outlet>
+  
+  <div style="max-width: 70%; margin: 0 auto;">
+    <router-outlet></router-outlet>
+  </div>
+

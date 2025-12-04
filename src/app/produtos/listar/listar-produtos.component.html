@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row" style="background-color: blanchedalmond;">
+  <div class="row" style="background-color: rgb(148, 197, 193);">
     <div class="col-md-3">
       Codigo de barras
     </div>
@@ -11,6 +11,20 @@
     </div>
     <div class="col-md-2">
       Estoque
+    </div>
+  </div>
+  <div class="row" *ngFor="let produto of produtos">
+    <div class="col-md-3">
+      {{produto.cod_barras}}
+    </div>
+    <div class="col-md-4">
+      {{produto.nom_produto}}
+    </div>
+    <div class="col-md-3">
+      {{produto.vlr_unitario}}
+    </div>
+    <div class="col-md-2">
+      {{produto.qtd_estoque}}
     </div>
   </div>
 </div>

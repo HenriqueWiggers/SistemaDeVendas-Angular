@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-clientes',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroClientesComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('formCliente', {static:true}) formProduto: NgForm;
+  constructor(
+    private router: Router,
+
+  ) { }
 
   ngOnInit(): void {
   }

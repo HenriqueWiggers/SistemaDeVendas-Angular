@@ -12,7 +12,7 @@ export class ClienteService {
 
   listarTodos():Cliente[]{
     const clientes = localStorage['clientes'];
-    return clientes ? JSON.parse['clientes'] : [];
+    return clientes ? JSON.parse(clientes) : [];
   }
 
   cadastrar(cliente:Cliente):void{
@@ -22,3 +22,5 @@ export class ClienteService {
   }
 
 }
+
+

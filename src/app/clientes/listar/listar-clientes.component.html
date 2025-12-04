@@ -1,1 +1,19 @@
-<p>listar-clientes works!</p>
+<div class="container">
+  <div class="row" style="background-color: rgb(148, 197, 193);">
+    <div class="col-md-3">
+      <b>Nome</b>
+    </div>
+    <div class="col-md-4">
+      <b>CPF</b>
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let cliente of clientes">
+    <div class="col-md-3">
+      {{cliente.nom_cliente}}
+    </div>
+    <div class="col-md-4">
+      {{cliente.cpf_cliente}}
+    </div>
+  </div>
+</div>

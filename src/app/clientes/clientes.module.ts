@@ -4,7 +4,7 @@ import { CadastroClientesComponent } from './cadastro';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from './shared/cliente.service';
-import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
+import { ListarClientesComponent } from './listar';
 
 
 

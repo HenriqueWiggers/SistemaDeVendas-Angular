@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ClientesModule } from './clientes';
 import { NgxMaskModule } from 'ngx-mask';
+import { VendasModule } from './vendas';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgxMaskModule } from 'ngx-mask';
     ClientesModule,
     RouterModule,
     AppRoutingModule,
+    VendasModule,
     NgxMaskModule.forRoot()
 
   ],

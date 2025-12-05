@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProdutoServiceService } from './shared/produto-service.service';
 import { ListarProdutosComponent } from './listar';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 
@@ -16,7 +17,8 @@ import { ListarProdutosComponent } from './listar';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers:[
     ProdutoServiceService

@@ -12,8 +12,8 @@
       <div id="nomeHelp" class="form-text">Digite o nome do produto</div>
     </div>
      <div class="col-md-2">
-      <label for="vlr_unitario" class="form-label">Preço venda</label>
-      <input type="text" class="form-control" id="vlr_unitario" name = "vlr_unitario" [(ngModel)] = "produto.vlr_unitario">
+      <label for="vlr_unitario" class="form-label" >Preço venda</label>
+      <input type="text" class="form-control" id="vlr_unitario" mask="separator.2" thousandSeparator="." decimalMarker="," name = "vlr_unitario" [(ngModel)] = "produto.vlr_unitario">
       <div id="preçoHelp" class="form-text">Digite o preço do produto</div>
     </div>
     <div class="col-md-2">

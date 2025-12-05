@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from './shared/cliente.service';
 import { ListarClientesComponent } from './listar';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 
@@ -16,7 +17,8 @@ import { ListarClientesComponent } from './listar';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     ClienteService

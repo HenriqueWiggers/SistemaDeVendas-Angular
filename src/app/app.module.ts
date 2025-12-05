@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ClientesModule } from './clientes';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { ClientesModule } from './clientes';
     ProdutosModule,
     ClientesModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxMaskModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

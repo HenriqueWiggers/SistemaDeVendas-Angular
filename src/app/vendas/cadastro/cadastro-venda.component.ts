@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Produto, ProdutoServiceService } from 'src/app/produtos';
+import { ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-venda',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroVendaComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('formVenda', { static: true }) formVenda: NgForm;
+  produto:Produto;
+  constructor(
+    private produtoService: ProdutoServiceService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.produto = new Produto;
   }
 
+  consultarProdutoVenda(){
+    const p = this.produtoService.listarPorEan(this.produto.cod_barras);
+
+    if (p) {
+      this.produto = p;
+    } else {
+     alert("Produto não encontrado!");
+    }
+  }
 }
+
+

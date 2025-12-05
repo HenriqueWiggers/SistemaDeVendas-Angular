@@ -20,4 +20,10 @@ export class ProdutoServiceService {
     localStorage['produtos'] = JSON.stringify(produtos);
   }
 
+  listarPorEan(ean:string){
+    const produtos = this.listarTodos();
+    const produtoFiltrado = produtos.find(p => p.cod_barras === ean || null);
+    return produtoFiltrado;
+  }
+
 }

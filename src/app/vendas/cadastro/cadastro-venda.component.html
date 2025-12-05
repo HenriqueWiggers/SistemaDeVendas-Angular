@@ -1,21 +1,21 @@
 <h2><i class="bi bi-cart4 me-3" ></i>Carrinho</h2>
-<form class="container-fluid">
+<form class="container-fluid" #formVenda = "ngForm">
   <div class="row">
     <div class="col-md-3" style="margin-top: 60px;">
       <label for="cod_barras"><h3>EAN (Cod.Barras)</h3></label>
-      <input type="text" class="form-control form-control-lg" id="cod_barras" name = "cod_barras" aria-describedby="EanHelp">
+      <input type="text" (change)="consultarProdutoVenda()" class="form-control form-control-lg" [(ngModel)]="produto.cod_barras" id="cod_barras" name = "cod_barras" aria-describedby="EanHelp">
     </div>
     <div class="col-md-5" style="margin-top: 60px;">
       <label for="nom_produto"><h3>Descrição</h3></label>
-      <input type="text" class="form-control form-control-lg" id="nom_produto" name = "nom_produto" aria-describedby="EanHelp" disabled>
+      <input type="text" class="form-control form-control-lg" id="nom_produto" name = "nom_produto" [(ngModel)]="produto.nom_produto" aria-describedby="EanHelp" disabled>
     </div>
     <div class="col-md-2" style="margin-top: 60px;">
       <label for="qtd_estoque"><h3>Estoque</h3></label>
-      <input type="text" class="form-control form-control-lg" id="qtd_estoque" name = "qtd_estoque" aria-describedby="EanHelp" disabled>
+      <input type="text" class="form-control form-control-lg" id="qtd_estoque" name = "qtd_estoque" [(ngModel)]="produto.qtd_estoque" aria-describedby="EanHelp" disabled>
     </div>
     <div class="col-md-2" style="margin-top: 60px;">
-      <label for="vlr_unitario"><h3 style="color: rgb(40, 133, 27);">Preço $</h3></label>
-      <input type="text" class="form-control form-control-lg" id="vlr_unitario" name = "vlr_unitario" aria-describedby="EanHelp" disabled>
+      <label for="vlr_unitario"><h3 style="color: rgb(40, 133, 27);">Preço</h3></label>
+      <input type="text" class="form-control form-control-lg" id="vlr_unitario" name = "vlr_unitario" [(ngModel)]="produto.vlr_unitario" aria-describedby="EanHelp" disabled>
     </div>
   </div>
   <button style="margin-top: 40px;" type="submit" class="btn btn-primary">Salvar</button>

@@ -6,6 +6,9 @@
     <div class="col-md-4">
       <b>CPF</b>
     </div>
+    <div class="col-md-3">
+      <b>Telefone</b>
+    </div>
   </div>
 
   <div class="row" *ngFor="let cliente of clientes">
@@ -14,6 +17,9 @@
     </div>
     <div class="col-md-4">
       {{cliente.cpf_cliente}}
+    </div>
+    <div class="col-md-3">
+      {{cliente.num_telefone}}
     </div>
   </div>
 </div>

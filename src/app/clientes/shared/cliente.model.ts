@@ -7,9 +7,9 @@ export class Cliente{
         public num_cep?:number,
         public nom_endereco?:string,
         public num_endereco?:number,
-        public nom_bairro?:string
+        public nom_bairro?:string,
+        public num_telefone?:string
     ){
-
     }
 
 }

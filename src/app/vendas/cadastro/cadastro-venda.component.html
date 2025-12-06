@@ -1,22 +1,33 @@
 <h2><i class="bi bi-cart4 me-3" ></i>Carrinho</h2>
 <form class="container-fluid" #formVenda = "ngForm">
-  <div class="row">
-    <div class="col-md-3" style="margin-top: 60px;">
+  <div class="row" style="margin-top: 60px;">
+    <div class="col-md-3">
       <label for="cod_barras"><h3>EAN (Cod.Barras)</h3></label>
       <input type="text" (change)="consultarProdutoVenda()" class="form-control form-control-lg" [(ngModel)]="produto.cod_barras" id="cod_barras" name = "cod_barras" aria-describedby="EanHelp">
     </div>
-    <div class="col-md-5" style="margin-top: 60px;">
+    <div class="col-md-5">
       <label for="nom_produto"><h3>Descrição</h3></label>
       <input type="text" class="form-control form-control-lg" id="nom_produto" name = "nom_produto" [(ngModel)]="produto.nom_produto" aria-describedby="EanHelp" disabled>
     </div>
-    <div class="col-md-2" style="margin-top: 60px;">
+    <div class="col-md-2">
       <label for="qtd_estoque"><h3>Estoque</h3></label>
       <input type="text" class="form-control form-control-lg" id="qtd_estoque" name = "qtd_estoque" [(ngModel)]="produto.qtd_estoque" aria-describedby="EanHelp" disabled>
     </div>
-    <div class="col-md-2" style="margin-top: 60px;">
+    
+    <div class="col-md-2">
       <label for="vlr_unitario"><h3 style="color: rgb(40, 133, 27);">Preço</h3></label>
       <input type="text" class="form-control form-control-lg" id="vlr_unitario" name = "vlr_unitario" [(ngModel)]="produto.vlr_unitario" aria-describedby="EanHelp" disabled>
     </div>
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-md-2">
+      <label for="qtd_vendida"><h3>Quantidade</h3></label>
+      <input type="text" class="form-control form-control-lg" id="qtd_estoque" name = "qtd_vendida" aria-describedby="EanHelp">
+    </div>
+    <div class="col-md-3">
+      <button style="margin-top: 40px;width: 400px;height: 50px;background-color: rgb(60, 138, 118);" type="submit" class="btn btn-primary">Adicionar item na venda</button>
+    </div>
+    </div>
   </div>
-  <button style="margin-top: 40px;" type="submit" class="btn btn-primary">Salvar</button>
+  
+   <div style="width: 100%;height: 5px;background-color: rgb(56, 53, 53);margin-top: 30px;"></div>
 </form>

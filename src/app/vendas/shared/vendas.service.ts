@@ -8,11 +8,14 @@ export class VendasService {
 
   
   registraItemVenda(itemVenda:itemVenda){
-
+    const itens = this.listaTodosItemVenda();
+    itens.push(itemVenda);
+    localStorage['itens'] = JSON.stringify(itens)
   }
 
   listaTodosItemVenda():itemVenda[]{
-    return null
+    const itensVenda = localStorage['itens']
+    return itensVenda ? JSON.parse(itensVenda) : [];
   }
 
   constructor() { }

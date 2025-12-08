@@ -6,7 +6,6 @@ export class Venda {
     constructor(
         public num_venda?:number,
         public itemVenda?: itemVenda[]
-
     ){
 
 

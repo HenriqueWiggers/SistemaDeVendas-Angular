@@ -3,6 +3,7 @@ import { Produto, ProdutoServiceService } from 'src/app/produtos';
 import { ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { itemVenda, VendasService } from '../shared';
 
 @Component({
   selector: 'app-cadastro-venda',
@@ -13,13 +14,19 @@ export class CadastroVendaComponent implements OnInit {
 
   @ViewChild('formVenda', { static: true }) formVenda: NgForm;
   produto:Produto;
+  quantidade=1;
+  
   constructor(
     private produtoService: ProdutoServiceService,
-    private router: Router
+    private router: Router,
+    private vendaService: VendasService
   ) { }
+
+  itens = this.vendaService.listaTodosItemVenda();
 
   ngOnInit(): void {
     this.produto = new Produto;
+
   }
 
   consultarProdutoVenda(){
@@ -31,6 +38,16 @@ export class CadastroVendaComponent implements OnInit {
      alert("Produto não encontrado!");
     }
   }
-}
 
+  adicionaItemGrid(quantidade:number){
+  const item = new itemVenda(
+    null,                       
+    this.produto,               
+    quantidade,
+                      
+  );
+  this.vendaService.registraItemVenda(item);
+  this.itens = this.vendaService.listaTodosItemVenda();
+}
+}
 

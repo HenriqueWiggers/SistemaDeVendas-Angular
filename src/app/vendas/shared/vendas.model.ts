@@ -5,7 +5,8 @@ export class Venda {
     
     constructor(
         public num_venda?:number,
-        public itemVenda?: itemVenda[]
+        public itemVenda?: itemVenda[],
+        public vlr_total?:number
     ){
 
 

@@ -7,11 +7,11 @@ import { Venda } from './vendas.model';
 })
 export class VendasService {
 
-  registraVenda(venda:Venda, itemVenda: itemVenda[]){
+  registraVenda(venda:Venda){
     const vendas = this.listarVendas();
-    const id =  Math.floor(Math.random() * 1000000);
-    const total = itemVenda.reduce((sum, item) => sum + item.vlr_subtotal, 0);
-    
+    vendas.unshift(venda)
+    localStorage['vendas'] = JSON.stringify(vendas)
+  
   }
 
   listarVendas():Venda[]{
@@ -21,7 +21,7 @@ export class VendasService {
   
   registraItemVenda(itemVenda:itemVenda){
     const itens = this.listaTodosItemVenda();
-    itens.push(itemVenda);
+    itens.unshift(itemVenda);
     localStorage['itens'] = JSON.stringify(itens)
   }
 

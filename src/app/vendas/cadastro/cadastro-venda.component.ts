@@ -17,6 +17,8 @@ export class CadastroVendaComponent implements OnInit {
   venda: Venda;
   produto: Produto;
   quantidade = 1;
+  total = 0;
+  
 
   itens = [];
 
@@ -28,22 +30,21 @@ export class CadastroVendaComponent implements OnInit {
 
   ngOnInit(): void {
     this.produto = new Produto();
-    this.venda = new Venda(null, [], 0); // ✔ AGORA INICIALIZADO
+    this.venda = new Venda(null, [], 0);
 
     this.itens = this.vendaService.listaTodosItemVenda();
   }
 
   finalizaVenda(itemVenda: itemVenda[]) {
     const id = Math.floor(Math.random() * 1000000);
-    const total = itemVenda.reduce((sum, item) => sum + item.vlr_subtotal, 0);
+    
 
-    // ✔ Antes quebrava (this.venda undefined)
     this.venda.itemVenda = itemVenda;
 
-    const v = new Venda(id, itemVenda, total);
+    const v = new Venda(id, itemVenda, this.total);
     this.vendaService.registraVenda(v);
 
-    localStorage.removeItem('itens'); // limpa itens da venda
+    localStorage.removeItem('itens');
   }
 
   consultarProdutoVenda() {
@@ -56,6 +57,10 @@ export class CadastroVendaComponent implements OnInit {
     }
   }
 
+  somaTotal (subtotal){
+    this.total = subtotal + this.total
+  }
+
   adicionaItemGrid(quantidade: number) {
 
     const item = new itemVenda(
@@ -66,5 +71,7 @@ export class CadastroVendaComponent implements OnInit {
 
     this.vendaService.registraItemVenda(item);
     this.itens = this.vendaService.listaTodosItemVenda();
+    this.somaTotal(item.vlr_subtotal);
+
   }
 }
